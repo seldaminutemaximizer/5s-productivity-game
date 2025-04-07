@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5S Productivity Game</title>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    #group-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .group-box {
+      border: 1px solid #aaa;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      background: #fff;
+      border-radius: 5px;
+    }
+    #game-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+      gap: 10px;
+      max-width: 600px;
+      margin: 20px 0;
+    }
+    .letter {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      border: 2px solid #333;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .clicked {
+      background-color: #90ee90;
+      cursor: default;
+    }
+    #info {
+      margin: 10px;
+      font-size: 1.2em;
+      min-height: 1.5em;
+      text-align: center;
+    }
+    #timer, #level-display {
+      font-size: 1.1em;
+    }
+    #scoreboard {
+      margin-top: 20px;
+    }
+    input[type="text"] {
+      padding: 5px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>5S Productivity Game</h1>
+  <div id="info">Click the letters of "PRODUCTIVE" in order!</div>
+  <div id="level-display">Level: 1</div>
+  <div id="game-wrapper">
+    <div id="game-container"></div>
+    <div id="group-container"></div>
+  </div>
+  <div id="timer">Time: 0.00s</div>
+  <div id="score-entry" style="display:none">
+    <input type="text" id="player-name" placeholder="Your Name" />
+    <button onclick="saveScore()">Save Score</button>
+  </div>
+  <div id="scoreboard">
+    <h2>Scoreboard</h2>
+    <ol id="scores"></ol>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

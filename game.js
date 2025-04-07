@@ -1,0 +1,1 @@
+// JavaScript logic injected separately for cleanliness
