@@ -18,15 +18,7 @@ const levelFeedback = {
 };
 
 function randomStyle(char) {
-  const fonts = ['Arial', 'Verdana', 'Times New Roman', 'Courier New', 'Georgia'];
-  const weights = ['normal', 'bold'];
-  const styles = ['normal', 'italic'];
-  const font = fonts[Math.floor(Math.random() * fonts.length)];
-  const weight = weights[Math.floor(Math.random() * weights.length)];
-  const style = styles[Math.floor(Math.random() * styles.length)];
-  const size = 12 + Math.floor(Math.random() * 14);
-  const transform = Math.random() > 0.5 ? 'uppercase' : 'lowercase';
-  return `font-family:${font}; font-weight:${weight}; font-style:${style}; font-size:${size}px; text-transform:${transform};`;
+  return "font-size: 24px; font-weight: bold; color: black;";
 }
 
 function generateLettersForLevel(level) {
